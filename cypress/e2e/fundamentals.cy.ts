@@ -1,4 +1,6 @@
-describe("Fundamentals test bl", () => {
+import "../support/e2e";
+
+describe("Fundamentals test", () => {
   it("passes", () => {
     cy.visit("http://localhost:5173");
   });
@@ -13,7 +15,7 @@ describe("heading", () => {
   });
 
   it("has a heading with a data tag", () => {
-    cy.get('[data-test="fundamental-header"]').contains(
+    cy.getDataTest("fundamental-header").contains(
       /This P tag has a tag: `data-test="fundamental-header"`/i // i for case insensitive
     );
   });
